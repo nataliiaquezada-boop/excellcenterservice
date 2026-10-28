@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Excell Center Service. Conheça nossas soluções contábeis e solicite informações.">
+<meta name="theme-color" content="#102b46">
+<title>Excell Center Service | Soluções Contábeis</title>
+
+<style>
+:root {
+  --primary: #102b46;
+  --secondary: #173d5e;
+  --accent: #17b6a4;
+  --text: #1c2a38;
+  --muted: #627184;
+  --background: #f5f8fb;
+  --white: #ffffff;
+  --border: #e0e7ee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+.topbar {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+}
+
+header {
+  background: rgba(255,255,255,.97);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+.logo small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #078d84;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #062e35;
+}
+
+.btn-white {
+  background: white;
+  color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 9px 13px;
+  background: var(--background);
+  border: 0;
+  border-radius: 8px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 90% 10%, #1b5672, transparent 35%),
+    linear-gradient(125deg, #0d263f, #123d5a 65%, #0c6269);
+  color: white;
+  padding: 90px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.tag {
+  color: #8be6dc;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.08;
+  margin: 20px 0;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: #70e0d3;
+}
+
+.hero p {
+  color: #d4e2eb;
+  font-size: 18px;
+  max-width: 600px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 28px 0;
+}
+
+.trust {
+  color: #d4e2eb;
+  font-size: 13px;
+}
+
+.trust span {
+  margin-right: 12px;
+}
+
+.dashboard {
+  background: white;
+  color: var(--text);
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px #061b2b55;
+  animation: appear .7s ease;
+}
+
+.dashboard h3 {
+  color: var(--primary);
+}
+
+.metric {
+  background: #f0faf8;
+  padding: 22px;
+  border-radius: 14px;
+  margin: 20px 0;
+}
+
+.metric strong {
+  display: block;
+  color: var(--primary);
+  font-size: 21px;
+  margin-top: 8px;
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mini {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12px;
+}
+
+.mini b {
+  display: block;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.section-light {
+  background: var(--background);
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.kicker {
+  color: #078d84;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--primary);
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 26px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #102b4614;
+}
+
+.card-icon {
+  background: #e5f8f5;
+  color: #087f75;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 23px;
+}
+
+.card h3 {
+  color: var(--primary);
+  margin: 18px 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 18px;
+  color: #087f75;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.step {
+  border-top: 2px solid #d8e7ed;
+  padding-top: 20px;
+}
+
+.step b {
+  color: #078d84;
+}
+
+.step h3 {
+  color: var(--primary);
+  margin: 10px 0;
+}
+
+.step p {
+  color: var(--muted);
+}
+
+.cta {
+  background: linear-gradient(110deg, #0e2c47, #13546a);
+  color: white;
+  border-radius: 22px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.cta h2 {
+  color: white;
+}
+
+.cta p {
+  color: #d4e5ed;
+}
+
+.faq {
+  max-width: 850px;
+  margin: auto;
+}
+
+details {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+summary {
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--primary);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  color: #078d84;
+  font-size: 20px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+.answer {
+  padding: 0 20px 22px;
+  color: var(--muted);
+  animation: appear .25s ease;
+}
+
+.answer p {
+  margin: 12px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 28px;
+}
+
+.contact-info {
+  background: var(--primary);
+  color: white;
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.contact-info p {
+  color: #d0e0e9;
+  margin: 12px 0;
+}
+
+.contact-info .item {
+  border-top: 1px solid #ffffff25;
+  padding: 14px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-info small {
+  display: block;
+  color: #9fb8c9;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-box {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px #102b4610;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid #ccd8e2;
+  border-radius: 9px;
+  padding: 12px;
+  font: inherit;
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status {
+  display: none;
+  padding: 12px;
+  background: #e4f8f2;
+  color: #11695b;
+  border-radius: 9px;
+  margin-top: 14px;
+}
+
+.legal-note {
+  background: #fff8ec;
+  border-left: 4px solid #f4bd62;
+  padding: 16px;
+  margin: 25px auto;
+  max-width: 850px;
+  color: #6a5129;
+}
+
+footer {
+  background: #091d30;
+  color: #c7d5df;
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .8fr;
+  gap: 30px;
+}
+
+footer h3,
+footer h4 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+footer p {
+  color: #a9bdcb;
+  margin-top: 15px;
+}
+
+footer a {
+  display: block;
+  text-decoration: none;
+  margin: 8px 0;
+  color: #b9ccd8;
+}
+
+footer a:hover {
+  color: #7ee2d5;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff20;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 12px;
+  color: #8fa6b7;
+}
+
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 60px #102b4630;
+  z-index: 999;
+}
+
+.cookie-banner.show {
+  display: block;
+  animation: appear .3s ease;
+}
+
+.cookie-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cookie-copy {
+  flex: 1;
+}
+
+.cookie-copy p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cookie-actions button {
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+.cookie-settings {
+  display: none;
+  border-top: 1px solid var(--border);
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.cookie-settings.open {
+  display: block;
+}
+
+.cookie-settings label {
+  margin-right: 15px;
+  font-size: 13px;
+}
+
+.cookie-link {
+  background: none;
+  border: none;
+  color: #7ee2d5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.back-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.back-top.show {
+  display: block;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 10px 25px #102b4614;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cookie-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 560px) {
+  section {
+    padding: 55px 0;
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  .cards,
+  .steps,
+  .form-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cookie-actions button {
+    flex: 1;
+  }
+
+  .footer-grid > div {
+    margin-bottom: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  Atendimento profissional • Informações claras
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo">
+      EXCELL CENTER SERVICE
+      <small>SOLUÇÕES CONTÁBEIS</small>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav id="nav">
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#contato" class="btn btn-primary">Entre em contato →</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="tag">Contabilidade com clareza</span>
+
+      <h1>
+        Mais clareza para cuidar do seu <span>negócio.</span>
+      </h1>
+
+      <p>
+        Conheça as soluções contábeis disponíveis para sua empresa
+        e encontre o próximo passo com informação, organização
+        e atendimento próximo.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary">Solicitar informações →</a>
+        <a href="#servicos" class="btn btn-white">Conhecer serviços</a>
+      </div>
+
+      <div class="trust">
+        <span>✓ Atendimento consultivo</span>
+        <span>✓ Comunicação transparente</span>
+      </div>
+    </div>
+
+    <div class="dashboard reveal">
+      <h3>Seu negócio, em perspectiva</h3>
+
+      <div class="metric">
+        <small>O primeiro passo</small>
+        <strong>Entender suas necessidades</strong>
+        <p>Uma conversa para identificar o serviço adequado.</p>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini"><b>01</b>Conte seu objetivo</div>
+        <div class="mini"><b>02</b>Entenda as opções</div>
+        <div class="mini"><b>03</b>Combine os próximos passos</div>
+      </div>
+
+      <p style="font-size:12px;color:#627184;margin-top:15px">
+        Ilustração informativa. Não representa resultados financeiros garantidos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="kicker">Nossas soluções</span>
+      <h2>Suporte contábil alinhado à sua realidade</h2>
+      <p>Conheça algumas áreas de atendimento. Mantenha apenas os serviços realmente oferecidos pela empresa.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-icon">▤</div>
+        <h3>Contabilidade empresarial</h3>
+        <p>Organização de informações contábeis e apoio à rotina da empresa, conforme o escopo contratado.</p>
+        <a href="#contato">Solicitar informações →</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">◷</div>
+        <h3>Rotinas fiscais</h3>
+        <p>Orientação sobre obrigações fiscais conforme o enquadramento e as necessidades do negócio.</p>
+        <a href="#contato">Solicitar informações →</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">↗</div>
+        <h3>Abertura e regularização</h3>
+        <p>Informações sobre etapas e documentos para formalização ou atualização cadastral, se disponível.</p>
+        <a href="#contato">Solicitar informações →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" id="como-funciona">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="kicker">Como funciona</span>
+      <h2>Comece de forma simples e transparente</h2>
+      <p>Entenda as etapas antes de assumir qualquer compromisso.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <b>ETAPA 01</b>
+        <h3>Compartilhe sua necessidade</h3>
+        <p>Explique o que sua empresa precisa e quais dúvidas deseja esclarecer.</p>
+      </div>
+
+      <div class="step reveal">
+        <b>ETAPA 02</b>
+        <h3>Receba informações</h3>
+        <p>Confirme disponibilidade, escopo, documentos, preços e prazos.</p>
+      </div>
+
+      <div class="step reveal">
+        <b>ETAPA 03</b>
+        <h3>Avalie e decida</h3>
+        <p>Analise as condições por escrito antes de contratar qualquer serviço.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <h2>Precisa de informações para sua empresa?</h2>
+        <p>Envie sua dúvida e conheça as opções de atendimento.</p>
+      </div>
+      <a href="#contato" class="btn btn-primary">Falar com a equipe →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" id="duvidas">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="kicker">Perguntas frequentes</span>
+      <h2>Tire suas dúvidas</h2>
+      <p>Informações para ajudar você a decidir com segurança.</p>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>Como solicito uma proposta?</summary>
+        <div class="answer">
+          Utilize o formulário de contato para descrever sua necessidade.
+          Os canais oficiais da empresa devem estar atualizados antes da publicação.
+        </div>
+      </details>
+
+      <details>
+        <summary>Quais serviços estão disponíveis?</summary>
+        <div class="answer">
+          A disponibilidade depende dos serviços efetivamente prestados.
+          Consulte a equipe para confirmar requisitos, escopo e condições.
+        </div>
+      </details>
+
+      <details>
+        <summary>Quanto custa o atendimento?</summary>
+        <div class="answer">
+          Os valores podem variar conforme o serviço e a complexidade.
+          Solicite uma proposta com preços, prazos e condições antes da contratação.
+        </div>
+      </details>
+
+      <details>
+        <summary>Enviar uma mensagem me obriga a contratar?</summary>
+        <div class="answer">
+          Não. Solicitar informações não equivale à contratação.
+          A contratação depende da aceitação das condições aplicáveis.
+        </div>
+      </details>
+
+      <details>
+        <summary>Como meus dados pessoais são tratados?</summary>
+        <div class="answer">
+          Consulte a Política de Privacidade para conhecer as finalidades,
+          os dados tratados, os prazos de retenção e os canais para exercer seus direitos.
+          A política precisa refletir as práticas reais da empresa.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="kicker">Contato</span>
+      <h2>Conte o que você precisa</h2>
+      <p>Preencha o formulário para demonstrar a validação de contato.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Excell Center Service</h3>
+        <p>Confirme os dados cadastrais e os canais oficiais antes de publicar.</p>
+
+        <div class="item">
+          <small>Razão social informada</small>
+          <strong>Excell Contabilidade LTDA</strong>
+        </div>
+
+        <div class="item">
+          <small>CNPJ informado</small>
+          <strong>01.724.737/0001-10</strong>
+        </div>
+
+        <div class="item">
+          <small>Endereço comercial</small>
+          <strong>[PREENCHER COM ENDEREÇO VERIFICADO]</strong>
+        </div>
+
+        <div class="item">
+          <small>E-mail e telefone</small>
+          <strong>[PREENCHER COM CANAIS REAIS]</strong>
+        </div>
+      </div>
+
+      <form class="form-box reveal" id="contactForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" autocomplete="name" required maxlength="100" placeholder="Seu nome">
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="voce@empresa.com">
+          </div>
+
+          <div class="field full">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione</option>
+              <option>Contabilidade empresarial</option>
+              <option>Rotinas fiscais</option>
+              <option>Abertura ou regularização</option>
+              <option>Outra dúvida</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required maxlength="1200" placeholder="Descreva sua necessidade."></textarea>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>Li a <a href="#privacidade">Política de Privacidade</a> e estou ciente de que este formulário é demonstrativo e não transmite os dados.</span>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Validar formulário →</button>
+
+        <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section-light" id="privacidade">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="kicker">Transparência</span>
+      <h2>Políticas e condições</h2>
+      <p>Leia as condições de utilização deste site.</p>
+    </div>
+
+    <div class="legal-note">
+      <strong>Importante:</strong> os textos abaixo são modelos.
+      Substitua os campos pendentes, confirme os dados da empresa e adapte
+      as políticas às práticas reais antes de publicar.
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Política de Privacidade e LGPD</summary>
+        <div class="answer">
+          <p><strong>1. Controlador.</strong> O responsável pelo tratamento deverá ser identificado como [RAZÃO SOCIAL VERIFICADA], CNPJ [CNPJ CONFIRMADO], endereço [ENDEREÇO] e e-mail de privacidade [E-MAIL REAL].</p>
+
+          <p><strong>2. Dados coletados.</strong> O site poderá tratar nome, e-mail e informações enviadas voluntariamente por formulários, conforme as funcionalidades efetivamente implementadas.</p>
+
+          <p><strong>3. Finalidades.</strong> Os dados deverão ser utilizados para finalidades específicas e informadas, como responder solicitações, prestar serviços ou cumprir obrigações legais, quando aplicável.</p>
+
+          <p><strong>4. Base legal.</strong> O controlador deverá identificar a base legal adequada para cada finalidade, nos termos da Lei nº 13.709/2018 (LGPD).</p>
+
+          <p><strong>5. Compartilhamento.</strong> Informe os fornecedores e destinatários reais dos dados, incluindo hospedagem, atendimento, análise de tráfego ou publicidade, caso utilizados.</p>
+
+          <p><strong>6. Retenção e segurança.</strong> Explique os critérios de armazenamento, os prazos aplicáveis e as medidas de segurança efetivamente adotadas.</p>
+
+          <p><strong>7. Direitos do titular.</strong> O titular pode exercer os direitos previstos na LGPD, conforme aplicáveis, por meio do canal [E-MAIL REAL DE PRIVACIDADE].</p>
+
+          <p><strong>8. Alterações.</strong> Esta política poderá ser atualizada. Publique a data da última revisão e mantenha o texto atualizado.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Política de Cookies</summary>
+        <div class="answer">
+          <p>Cookies são arquivos ou identificadores utilizados para funções essenciais, preferências, análise e publicidade.</p>
+
+          <p><strong>Cookies necessários:</strong> podem ser utilizados para funções essenciais do site.</p>
+
+          <p><strong>Cookies opcionais:</strong> ferramentas de análise e publicidade deverão ser configuradas conforme a legislação aplicável e as preferências válidas do visitante.</p>
+
+          <p><strong>Controle:</strong> o visitante pode aceitar, recusar ou personalizar as opções disponíveis no painel de cookies.</p>
+
+          <p>Este arquivo demonstrativo apenas guarda a preferência no armazenamento local do navegador. Ele não instala tags de publicidade ou análise. Antes de integrar ferramentas externas, configure o gerenciamento de consentimento e o bloqueio prévio de tags conforme aplicável.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Termos de Uso</summary>
+        <div class="answer">
+          <p><strong>1. Finalidade.</strong> Este site tem finalidade informativa sobre os serviços efetivamente oferecidos pela empresa.</p>
+
+          <p><strong>2. Uso adequado.</strong> O visitante deve utilizar o site de forma lícita, sem comprometer sua segurança ou funcionamento.</p>
+
+          <p><strong>3. Conteúdo.</strong> Marcas, textos e materiais pertencem aos respectivos titulares e estão sujeitos às regras de utilização aplicáveis.</p>
+
+          <p><strong>4. Informações.</strong> As informações devem ser confirmadas antes de decisões relevantes. Nenhum resultado específico é garantido por este conteúdo.</p>
+
+          <p><strong>5. Contratação.</strong> O envio de um formulário não cria, por si só, uma relação contratual. A contratação depende da aceitação das condições aplicáveis.</p>
+
+          <p><strong>6. Responsável.</strong> A identificação empresarial e os canais oficiais devem estar corretos e atualizados.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Termos de Serviço e Contratação</summary>
+        <div class="answer">
+          <p><strong>Escopo:</strong> os serviços, entregas, responsabilidades e exclusões deverão constar da proposta ou contrato individual.</p>
+
+          <p><strong>Preços:</strong> antes da contratação, informe valores, taxas aplicáveis, formas de pagamento, prazos e condições de cancelamento.</p>
+
+          <p><strong>Obrigações:</strong> os documentos necessários, os prazos e as responsabilidades de cada parte deverão ser definidos previamente.</p>
+
+          <p><strong>Cancelamento:</strong> informe os canais e procedimentos reais de suporte, cancelamento e reembolso, quando aplicáveis, respeitando os direitos legais do consumidor.</p>
+
+          <p><strong>Resultados:</strong> não são prometidos resultados financeiros, aprovação de crédito ou economia tributária garantida.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Contato e solicitações sobre dados</summary>
+        <div class="answer">
+          Canal de atendimento: [E-MAIL REAL]. Telefone: [TELEFONE REAL].
+          Endereço: [ENDEREÇO VERIFICADO].
+          Preencha esses campos com informações verdadeiras e funcionais antes da publicação.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>EXCELL CENTER SERVICE</h3>
+        <p>Informação clara para apoiar decisões empresariais.</p>
+        <p>Razão social informada: Excell Contabilidade LTDA</p>
+        <p>CNPJ informado: 01.724.737/0001-10</p>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#duvidas">Perguntas frequentes</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div>
+        <h4>Informações legais</h4>
+        <a href="#privacidade">Política de Privacidade</a>
+        <a href="#privacidade">Política de Cookies</a>
+        <a href="#privacidade">Termos de Uso</a>
+        <a href="#privacidade">Termos de Serviço</a>
+        <button class="cookie-link" id="footerCookieSettings">Preferências de cookies</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Excell Center Service. Confirme os dados empresariais antes de publicar.
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Preferências de cookies">
+  <div class="cookie-row">
+    <div class="cookie-copy">
+      <strong>Suas preferências de privacidade</strong>
+      <p>Este modelo armazena sua escolha no navegador. Nenhuma ferramenta externa de análise ou publicidade está integrada.</p>
+      <a href="#privacidade">Leia nossa política</a>
+    </div>
+
+    <div class="cookie-actions">
+      <button class="btn" id="rejectCookies" type="button">Recusar opcionais</button>
+      <button class="btn" id="customizeCookies" type="button">Personalizar</button>
+      <button class="btn btn-primary" id="acceptCookies" type="button">Aceitar opcionais</button>
+    </div>
+  </div>
+
+  <div class="cookie-settings" id="cookieSettings">
+    <p><label><input type="checkbox" checked disabled> Necessários (sempre ativos)</label></p>
+    <p><label><input type="checkbox" id="analyticsCookies"> Análise</label></p>
+    <p><label><input type="checkbox" id="marketingCookies"> Publicidade</label></p>
+    <button class="btn btn-primary" id="saveCookieSettings" type="button">Salvar preferências</button>
+  </div>
+</div>
+
+<button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
+
+<script>
+(() => {
+  const $ = selector => document.querySelector(selector);
+
+  $("#year").textContent = new Date().getFullYear();
+
+  // Menu responsivo
+  const menuToggle = $("#menuToggle");
+  const nav = $("#nav");
+
+  menuToggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.textContent = open ? "✕" : "☰";
+  });
+
+  nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Accordions: abre um item por vez dentro de cada seção de perguntas
+  document.querySelectorAll(".faq").forEach(group => {
+    group.querySelectorAll("details").forEach(item => {
+      item.addEventListener("toggle", () => {
+        if (item.open) {
+          group.querySelectorAll("details").forEach(other => {
+            if (other !== item) other.open = false;
+          });
+        }
+      });
+    });
+  });
+
+  // Animações ao rolar a página
+  const revealItems = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add("visible"));
+  }
+
+  // Formulário de demonstração: não transmite os dados
+  $("#contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+
+    if (!form.reportValidity()) return;
+
+    const status = $("#formStatus");
+    status.style.display = "block";
+    status.textContent =
+      "Validação concluída. Esta é uma demonstração: sua mensagem NÃO foi enviada. Configure um servidor seguro para receber mensagens.";
+    form.reset();
+  });
+
+  // Preferências demonstrativas de cookies
+  const banner = $("#cookieBanner");
+  const settings = $("#cookieSettings");
+
+  function readPreferences() {
+    try {
+      return JSON.parse(
+        localStorage.getItem("excell_cookie_preferences") || "null"
+      );
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function savePreferences(preferences) {
+    try {
+      localStorage.setItem(
+        "excell_cookie_preferences",
+        JSON.stringify({
+          ...preferences,
+          savedAt: new Date().toISOString()
+        })
+      );
+    } catch (error) {
+      // O navegador pode bloquear armazenamento local.
+    }
+
+    banner.classList.remove("show");
+  }
+
+  const saved = readPreferences();
+
+  if (!saved) {
+    banner.classList.add("show");
+  } else {
+    $("#analyticsCookies").checked = !!saved.analytics;
+    $("#marketingCookies").checked = !!saved.marketing;
+  }
+
+  $("#acceptCookies").addEventListener("click", () => {
+    savePreferences({
+      necessary: true,
+      analytics: true,
+      marketing: true
+    });
+  });
+
+  $("#rejectCookies").addEventListener("click", () => {
+    savePreferences({
+      necessary: true,
+      analytics: false,
+      marketing: false
+    });
+  });
+
+  $("#customizeCookies").addEventListener("click", () => {
+    settings.classList.toggle("open");
+  });
+
+  $("#saveCookieSettings").addEventListener("click", () => {
+    savePreferences({
+      necessary: true,
+      analytics: $("#analyticsCookies").checked,
+      marketing: $("#marketingCookies").checked
+    });
+  });
+
+  $("#footerCookieSettings").addEventListener("click", () => {
+    const preferences = readPreferences();
+
+    $("#analyticsCookies").checked = !!(preferences && preferences.analytics);
+    $("#marketingCookies").checked = !!(preferences && preferences.marketing);
+
+    settings.classList.add("open");
+    banner.classList.add("show");
+
+    banner.scrollIntoView({
+      behavior: "smooth",
+      block: "end"
+    });
+  });
+
+  // Botão voltar ao topo
+  const backTop = $("#backTop");
+
+  window.addEventListener("scroll", () => {
+    backTop.classList.toggle("show", window.scrollY > 500);
+  }, { passive: true });
+
+  backTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
